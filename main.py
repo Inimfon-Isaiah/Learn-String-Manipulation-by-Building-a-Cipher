@@ -1,13 +1,13 @@
-text = "Hello Zaira"
+text = 'mrttaqrhknsw ih puggrur'
 custom_key = 'python'
 
 # message and offset are parameters of the caesar function
 def vigenere(message, key, direction = 1):
     key_index = 0
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    final_message = ""
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    final_message = ''
 
-    # Append space to the message
+    # Append any non-letter character to the message
     for char in message.lower():
         if not char.isalpha():
             final_message += char
@@ -21,9 +21,15 @@ def vigenere(message, key, direction = 1):
             index = alphabet.find(char)
             new_index = (index + offset * direction) % len(alphabet) 
             final_message += alphabet[new_index]
-    
     return final_message
-encryption = vigenere(text, custom_key, 1)
-print(encryption)
-decryption = vigenere(encryption, custom_key, -1)
-print(decryption)
+
+def encrypt(message, key):
+    return vigenere(message, key)
+def decrypt(message, key):
+    return vigenere(message, key, -1)
+
+print('Encrypted text: ' + text)
+print('Key: ' + custom_key)
+
+# decryption = decrypt(encryption, custom_key)
+# print(decryption)
