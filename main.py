@@ -1,5 +1,5 @@
 text = 'mrttaqrhknsw ih puggrur'
-custom_key = 'python'
+custom_key = 'happycoding'
 
 # message and offset are parameters of the caesar function
 def vigenere(message, key, direction = 1):
@@ -28,8 +28,8 @@ def encrypt(message, key):
 def decrypt(message, key):
     return vigenere(message, key, -1)
 
-print('Encrypted text: ' + text)
-print('Key: ' + custom_key)
+print(f'\nEncrypted text: {text}')
+print(f'Key: {custom_key}')
 
-# decryption = decrypt(encryption, custom_key)
-# print(decryption)
+decryption = decrypt(text, custom_key)
+print(f'\nDecrypted text: {decryption}\n')
